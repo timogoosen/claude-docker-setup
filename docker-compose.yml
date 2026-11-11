@@ -1,0 +1,12 @@
+services:
+  claude-docker:
+    image: claude-node:latest
+    user: node
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    command: /bin/bash
+    volumes: 
+      - ~/projects:/home/node/projects
+      - ~/.ssh/:/home/node/.ssh
+      - ~/.gitconfig:/home/node/.gitconfig
+      - ./.bashrc:/home/node/.bashrc
